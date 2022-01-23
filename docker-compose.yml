@@ -1,0 +1,14 @@
+# docker-compose.yml
+version: '3.7'
+services:
+      
+  he-database:
+    container_name: he-database
+    image: pgrouting/pgrouting:12-3.0-2.6.3
+    ports:
+      - '9432:5432'
+    environment:
+      - POSTGRES_PASSWORD=postgres 
+    volumes:
+      - /geo_database:/var/lib/postgresql/data
+    
